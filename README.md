@@ -6,7 +6,7 @@ Projenin temel amacı, normal ve şüpheli işlemleri ayırabilen, yüksek doğr
 
 ---
 
-## 📊 Veri Seti Hakkında
+##  Veri Seti Hakkında
 
 - Toplam işlem sayısı: **284.807**
 - Toplam sütun sayısı: **31**
@@ -18,7 +18,7 @@ Projenin temel amacı, normal ve şüpheli işlemleri ayırabilen, yüksek doğr
 
 ---
 
-## 🚀 Kullanılan Modeller
+##  Kullanılan Modeller
 
 Projede iki farklı makine öğrenmesi yöntemi denenmiştir:
 
@@ -36,7 +36,7 @@ Bu sonuçlar doğrultusunda **final model olarak Random Forest seçilmiştir.**
 
 ---
 
-## 🧪 Yapılan Adımlar
+##  Yapılan Adımlar
 
 - Veri setinin yüklenmesi ve ilk inceleme  
 - Eksik değer kontrolü  
@@ -49,21 +49,21 @@ Bu sonuçlar doğrultusunda **final model olarak Random Forest seçilmiştir.**
 
 ---
 
-## 📈 Sonuç
+##  Sonuç
 
 Random Forest modeli, fraud işlemleri tespit etmede daha yüksek başarı göstermiştir.  
 Özellikle dengesiz veri setlerinde daha güçlü performans sunması nedeniyle proje için uygun bir çözüm olmuştur.
 
 ---
 
-## 📂 Dosyalar
+##  Dosyalar
 
 - `Bank_Fraud_Detection_Project.ipynb` → Projenin tüm adımlarının yer aldığı Jupyter/Colab notebook
 - Gerekli görseller (Confusion Matrix, ROC grafiği) notebook içinde oluşturulmaktadır.
 
 ---
 
-## 💡 Gelecek Çalışmalar
+##  Gelecek Çalışmalar
 
 - Veri dengesizliğini azaltmak için SMOTE gibi yöntemler kullanılabilir.
 - XGBoost veya LightGBM gibi daha gelişmiş modeller denenebilir.
@@ -72,7 +72,7 @@ Random Forest modeli, fraud işlemleri tespit etmede daha yüksek başarı göst
 
 ---
 
-## 👥 Geliştiriciler
+##  Geliştiriciler
 Bu proje, üniversite kapsamında bir grup çalışması olarak hazırlanmıştır.
 
 ---
