@@ -63,15 +63,6 @@ Random Forest modeli, fraud işlemleri tespit etmede daha yüksek başarı göst
 
 ---
 
-##  Gelecek Çalışmalar
-
-- Veri dengesizliğini azaltmak için SMOTE gibi yöntemler kullanılabilir.
-- XGBoost veya LightGBM gibi daha gelişmiş modeller denenebilir.
-- Model gerçek zamanlı bir API sistemine dönüştürülebilir.
-- Özellik mühendisliği genişletilerek daha kapsamlı bir analiz yapılabilir.
-
----
-
 ##  Geliştiriciler
 Bu proje, üniversite kapsamında bir grup çalışması olarak hazırlanmıştır.
 
