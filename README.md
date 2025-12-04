@@ -1,48 +1,81 @@
 # Banka İçin Fraud Detection Projesi
 
-Bu proje, kredi kartı işlemleri üzerinde sahte (fraud) işlemleri tespit etmek amacıyla geliştirilmiş makine öğrenmesi tabanlı bir karar destek sistemidir.
+Bu proje, kredi kartı işlemleri üzerinde gerçekleşen dolandırıcılık (fraud) girişimlerini tespit etmek amacıyla hazırlanmıştır. Çalışmada Kaggle üzerinde yayınlanan 284.807 satırlık gerçek kredi kartı veri seti kullanılmıştır.
 
-# Projenin Amacı
-Amaç, geçmiş işlem verileri üzerinden öğrenen bir model ile, yeni işlemlerin fraud (dolandırıcılık) olasılığını tahmin etmektir.
+Projenin temel amacı, normal ve şüpheli işlemleri ayırabilen, yüksek doğrulukla çalışan ve fraud işlemleri mümkün olduğunca kaçırmayan bir makine öğrenmesi modeli geliştirmektir.
 
-# Veri Seti
-- Toplam işlem: 105.066
-- Özellik sayısı: 31
-- Hedef değişken: Class
-  - 0 → Normal işlem
-  - 1 → Fraud işlem
+---
 
-Fraud oranı yaklaşık %0.22 olup veri seti oldukça dengesizdir.
+## 📊 Veri Seti Hakkında
 
-# Kullanılan Yöntemler
-Projede iki model test edilmiştir:
-- Logistic Regression
-- Random Forest
+- Toplam işlem sayısı: **284.807**
+- Toplam sütun sayısı: **31**
+- Hedef değişken: `Class`
+  - `0` → Normal işlem  
+  - `1` → Fraud işlem
+- V1–V28 sütunları güvenlik nedeniyle PCA ile dönüştürülmüş anonim özelliklerdir.
+- Fraud oranı yaklaşık **%0.17** olup veri seti oldukça dengesizdir.
 
-# Logistic Regression
-Fraud Recall: %50  
-Bu model, fraud işlemlerin yalnızca yarısını tespit edebilmiştir.
+---
 
-# Random Forest
-- Fraud Recall: %78
-- Fraud Precision: %94
-- F1-score: %85
+## 🚀 Kullanılan Modeller
 
-Bu nedenle en başarılı model olarak Random Forest seçilmiştir.
+Projede iki farklı makine öğrenmesi yöntemi denenmiştir:
 
-# Ek Analiz
-Model performansı ROC Eğrisi ve AUC değeri ile de değerlendirilmiştir. AUC değerinin 1’e yakın olması modelin genel performansının yüksek olduğunu göstermektedir.
+### **1. Logistic Regression**
+- Basit ve yorumlanabilir bir model olduğundan başlangıç noktası olarak tercih edilmiştir.
+- Ancak fraud işlemlerin yalnızca yaklaşık %63’ünü yakalayabildiği için yeterli bulunmamıştır.
 
-# Çalıştırma
-Notebook dosyası Google Colab üzerinde çalışacak şekilde hazırlanmıştır.
+### **2. Random Forest**
+- Birden fazla karar ağacının birlikte çalıştığı güçlü bir ensemble yöntemidir.
+- Fraud sınıfında **%82’nin üzerinde recall** elde edilmiştir.
+- Yanlış alarm oranı düşüktür.
+- ROC–AUC skoru yaklaşık **0.96** olup modelin ayrım gücü oldukça yüksektir.
 
-Gerekli kütüphaneler:
-- pandas
-- numpy
-- scikit-learn
-- matplotlib
-- seaborn
+Bu sonuçlar doğrultusunda **final model olarak Random Forest seçilmiştir.**
 
-# Gelecekte yapılabilecek Çalışmalar
-- SMOTE ile veri dengeleme
-- XGBoost modeli denemeleri
+---
+
+## 🧪 Yapılan Adımlar
+
+- Veri setinin yüklenmesi ve ilk inceleme  
+- Eksik değer kontrolü  
+- Sınıf dengesizliğinin analiz edilmesi  
+- Train-test ayrımı  
+- Logistic Regression eğitimi ve değerlendirilmesi  
+- Random Forest eğitimi ve değerlendirilmesi  
+- Confusion Matrix, ROC eğrisi ve AUC skorunun hesaplanması  
+- Modellerin karşılaştırılması  
+
+---
+
+## 📈 Sonuç
+
+Random Forest modeli, fraud işlemleri tespit etmede daha yüksek başarı göstermiştir.  
+Özellikle dengesiz veri setlerinde daha güçlü performans sunması nedeniyle proje için uygun bir çözüm olmuştur.
+
+---
+
+## 📂 Dosyalar
+
+- `Bank_Fraud_Detection_Project.ipynb` → Projenin tüm adımlarının yer aldığı Jupyter/Colab notebook
+- Gerekli görseller (Confusion Matrix, ROC grafiği) notebook içinde oluşturulmaktadır.
+
+---
+
+## 💡 Gelecek Çalışmalar
+
+- Veri dengesizliğini azaltmak için SMOTE gibi yöntemler kullanılabilir.
+- XGBoost veya LightGBM gibi daha gelişmiş modeller denenebilir.
+- Model gerçek zamanlı bir API sistemine dönüştürülebilir.
+- Özellik mühendisliği genişletilerek daha kapsamlı bir analiz yapılabilir.
+
+---
+
+## 👥 Geliştiriciler
+Bu proje, üniversite kapsamında bir grup çalışması olarak hazırlanmıştır.
+
+---
+
+Her türlü katkıya ve geliştirmeye açıktır.  
+Teşekkürler!
